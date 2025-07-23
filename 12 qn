@@ -41,18 +41,120 @@ class Solution:
 
 4) Reverse a number(Try thinking how you can use above logic in solving this)	https://www.geeksforgeeks.org/problems/reverse-digit0316/1
 
+#User function Template for python3
+
+class Solution:
+	def reverseDigits(self, n):
+		# Code here
+		rev=0
+		dig=0
+		while n!=0:
+		    dig=n%10
+		    rev=rev*10+dig
+		    n=n//10
+	    return rev
+
 5) Find power of a number	https://www.geeksforgeeks.org/problems/power-of-numbers-1587115620/1
+
+class Solution:
+    def reverseexponentiation(self, n):
+        rev = 0
+        a = n
+        while n != 0:
+            rev = rev * 10 + n % 10
+            n = n // 10
+
+        return pow(a, rev)
 
 6) GCD	https://practice.geeksforgeeks.org/problems/gcd-of-two-numbers3459/1
 
+class Solution:
+    def gcd(self, a, b):
+        # code here
+        if b==0:
+            return a
+        return self.gcd(b,a%b)
+
 7) Print all divisors of a number	https://www.codingninjas.com/studio/problems/print-all-divisors-of-a-number_1164188
+
+from typing import List
+
+def printDivisors(n: int) -> List[int]:
+    result = []
+    for i in range(1, n + 1):
+        if n % i == 0:
+            result.append(i)
+    return result
 
 8) Prime number(Try solving by yourself)	https://practice.geeksforgeeks.org/problems/prime-number2314/1
 
+class Solution:
+    def isPrime(self, n):
+        # code here
+        if n<2:
+            return False
+        else:
+            for i in range(2,int(n**0.5)+1):
+                if(n%i==0):
+                    return False
+            return True
+
 9) Armstrong number(Solving power of number, will make this easy for you)	https://www.geeksforgeeks.org/problems/armstrong-numbers2727/1
 
+#User function Template for python3
+
+class Solution:
+    def armstrongNumber (self, n):
+        # code here 
+        a=n
+        val=0
+        while n!=0:
+            dig=n%10
+            val+=dig**3
+            n//=10
+        if(val==a):
+            return True
+        else:
+            return False
+            
 10) Check palindrome of number(Use the techniques you learnt so far solving above probs and solve this by yourself)	https://practice.geeksforgeeks.org/problems/palindrome0746/1
+
+class Solution:
+    def isPalindrome(self, n):
+		# code here
+		a=n
+		val=0
+		while(n!=0):
+		    dig=n%10
+		    val=val*10+dig
+		    n//=10
+        if(a==val):
+            return True
+        else:
+            return False
 
 11) Square root of a number(Try to first figure out algo to solve this)	https://www.geeksforgeeks.org/problems/square-root/1
 
+class Solution:
+    def floorSqrt(self, n): 
+    # code here
+        return int(n**0.5)
+
 12) Perfect number	https://practice.geeksforgeeks.org/problems/perfect-numbers3207/1
+
+class Solution:
+    def isPerfect(self, n):
+        if n <= 1:
+            return False
+
+        total = 1  # 1 is always a divisor (excluding the number itself)
+
+        i = 2
+        while i * i <= n:
+            if n % i == 0:
+                total += i
+                if i != n // i:
+                    total += n // i
+            i += 1
+
+        return total == n
