@@ -1,0 +1,58 @@
+Basics		
+Beginners basic math probs		
+1) Find even or odd	https://practice.geeksforgeeks.org/problems/odd-or-even3618/1
+
+class Solution:
+    def isEven (self, n):
+        # code here 
+        return n%2==0
+
+2 )Find last digit in a number	https://www.geeksforgeeks.org/problems/find-last-digit-of-ab-for-large-numbers1936/1
+
+class Solution:
+    def getLastDigit(self, a, b):
+        if b == "0":
+            return 1
+
+        base = int(a[-1])
+        cycle_len = [1, 1, 4, 4, 2, 1, 1, 4, 4, 2][base]
+
+        # Compute b % cycle_len
+        exp = 0
+        for digit in b:
+            exp = (exp * 10 + int(digit)) % cycle_len
+
+        if exp == 0:
+            exp = cycle_len
+
+        return pow(base, exp, 10)
+
+
+3 )Count digits in a number(Solving above last digit prob wil make this easy for you)	https://practice.geeksforgeeks.org/problems/count-digits5716/1
+
+class Solution:
+    def evenlyDivides(self, n):
+        count = 0
+        for digit in str(n):
+            d = int(digit)
+            if d != 0 and n % d == 0:
+                count += 1
+        return count
+
+4) Reverse a number(Try thinking how you can use above logic in solving this)	https://www.geeksforgeeks.org/problems/reverse-digit0316/1
+
+5) Find power of a number	https://www.geeksforgeeks.org/problems/power-of-numbers-1587115620/1
+
+6) GCD	https://practice.geeksforgeeks.org/problems/gcd-of-two-numbers3459/1
+
+7) Print all divisors of a number	https://www.codingninjas.com/studio/problems/print-all-divisors-of-a-number_1164188
+
+8) Prime number(Try solving by yourself)	https://practice.geeksforgeeks.org/problems/prime-number2314/1
+
+9) Armstrong number(Solving power of number, will make this easy for you)	https://www.geeksforgeeks.org/problems/armstrong-numbers2727/1
+
+10) Check palindrome of number(Use the techniques you learnt so far solving above probs and solve this by yourself)	https://practice.geeksforgeeks.org/problems/palindrome0746/1
+
+11) Square root of a number(Try to first figure out algo to solve this)	https://www.geeksforgeeks.org/problems/square-root/1
+
+12) Perfect number	https://practice.geeksforgeeks.org/problems/perfect-numbers3207/1
